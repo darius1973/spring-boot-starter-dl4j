@@ -1,0 +1,65 @@
+  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.darius1973</groupId>
+    <artifactId>spring-boot-starter-dl4j</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Spring Boot Starter DL4J</name>
+    <description>Spring Boot starter for Deeplearning4j</description>
+
+    <modules>
+      <module>dl4j-spring-boot-autoconfigure</module>
+      <module>dl4j-spring-boot-starter</module>
+    </modules>
+
+    <properties>
+      <java.version>17</java.version>
+      <spring.boot.version>3.2.5</spring.boot.version>
+      <dl4j.version>1.0.0-M2</dl4j.version>
+      <nd4j.version>1.0.0-M2</nd4j.version>
+    </properties>
+
+      <dependencyManagement>
+        <dependencies>
+
+          <!-- Spring Boot BOM -->
+          <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring.boot.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+          </dependency>
+            <dependency>
+              <groupId>org.deeplearning4j</groupId>
+              <artifactId>deeplearning4j-core</artifactId>
+              <version>${dl4j.version}</version>
+            </dependency>
+
+            <dependency>
+              <groupId>org.nd4j</groupId>
+              <artifactId>nd4j-native-platform</artifactId>
+              <version>${nd4j.version}</version>
+            </dependency>
+          </dependencies>
+      </dependencyManagement>
+
+      <build>
+        <pluginManagement>
+          <plugins>
+            <!-- Compiler -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.11.0</version>
+              <configuration>
+                <source>${java.version}</source>
+                <target>${java.version}</target>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+  </project>
