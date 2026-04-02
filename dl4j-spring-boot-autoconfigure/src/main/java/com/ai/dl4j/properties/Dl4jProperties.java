@@ -1,44 +1,45 @@
 package com.ai.dl4j.properties;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
 
+@Data
+@Validated
 @ConfigurationProperties(prefix = "dl4j")
 public class Dl4jProperties {
 
-    private int epochs = 10;
-    private double learningRate = 0.01;
-    private int inputSize = 3;
+    /**
+     * Number of input features.
+     */
+    @Min(1)
+    private int inputSize = 1;
+
+    /**
+     * Number of output features.
+     */
+    @Min(1)
     private int outputSize = 1;
 
-    public int getEpochs() {
-        return epochs;
-    }
+    /**
+     * Random seed for reproducibility.
+     */
+    private long seed = 123;
 
-    public void setEpochs(int epochs) {
-        this.epochs = epochs;
-    }
+    /**
+     * Number of epochs.
+     */
+    @Min(1)
+    private int epochs;
 
-    public double getLearningRate() {
-        return learningRate;
-    }
+    /**
+     * Model configuration.
+     */
+    @Valid
+    @NotNull
+    private ModelProperties model = new ModelProperties();
 
-    public void setLearningRate(double learningRate) {
-        this.learningRate = learningRate;
-    }
-
-    public int getInputSize() {
-        return inputSize;
-    }
-
-    public void setInputSize(int inputSize) {
-        this.inputSize = inputSize;
-    }
-
-    public int getOutputSize() {
-        return outputSize;
-    }
-
-    public void setOutputSize(int outputSize) {
-        this.outputSize = outputSize;
-    }
 }
