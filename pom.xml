@@ -8,11 +8,34 @@
 
     <name>Spring Boot Starter DL4J</name>
     <description>Spring Boot starter for Deeplearning4j</description>
+    <url>https://github.com/darius1973/spring-boot-starter-dl4j</url>
 
     <modules>
       <module>dl4j-spring-boot-autoconfigure</module>
       <module>dl4j-spring-boot-starter</module>
     </modules>
+
+    <licenses>
+      <license>
+        <name>BSD 3-Clause License</name>
+        <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        <distribution>repo</distribution>
+      </license>
+    </licenses>
+
+    <developers>
+      <developer>
+        <id>darius1973</id>
+        <name>Darius Nica</name>
+        <email>darius.nica@gmail.com</email>
+      </developer>
+    </developers>
+
+    <scm>
+      <connection>scm:git:git://github.com/darius1973/spring-boot-starter-dl4j.git</connection>
+      <developerConnection>scm:git:ssh://github.com/darius1973/spring-boot-starter-dl4j.git</developerConnection>
+      <url>https://github.com/darius1973/spring-boot-starter-dl4j</url>
+    </scm>
 
     <properties>
       <java.version>17</java.version>
@@ -60,6 +83,43 @@
                 <source>${java.version}</source>
                 <target>${java.version}</target>
               </configuration>
+            </plugin>
+
+            <!-- GPG plugin -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-gpg-plugin</artifactId>
+              <version>3.2.4</version>
+              <executions>
+                <execution>
+                  <id>sign-artifacts</id>
+                  <phase>verify</phase>
+                  <goals><goal>sign</goal></goals>
+                </execution>
+              </executions>
+            </plugin>
+            <!-- Central Publishing Maven Plugin -->
+            <plugin>
+              <groupId>org.sonatype.central</groupId>
+              <artifactId>central-publishing-maven-plugin</artifactId>
+              <version>0.9.0</version> <!-- Use the latest version -->
+              <extensions>true</extensions>
+              <configuration>
+                <publishingServerId>ossrh</publishingServerId>
+                <autoPublish>true</autoPublish>
+              </configuration>
+            </plugin>
+            <!-- Javadoc JAR -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <version>3.6.3</version>
+              <executions>
+                <execution>
+                  <id>attach-javadocs</id>
+                  <goals><goal>jar</goal></goals>
+                </execution>
+              </executions>
             </plugin>
           </plugins>
         </pluginManagement>

@@ -6,6 +6,7 @@ import com.ai.dl4j.properties.Dl4jProperties;
 import com.ai.dl4j.service.Dl4jModelService;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -14,28 +15,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConditionalOnClass(NeuralNetConfiguration.class)
+@AutoConfiguration
 @EnableConfigurationProperties(Dl4jProperties.class)
-/**
- * Auto-configuration for DL4J integration.
- *
- * <p>
- * This configuration class is responsible for:
- * <ul>
- *     <li>Creating a {@link MultiLayerNetwork} based on YAML configuration</li>
- *     <li>Providing a {@link Dl4jModelService} for training and inference</li>
- * </ul>
- *
- * <p>
- * The model is built using {@link Dl4jModelFactory}, which interprets
- * the {@code dl4j.*} properties defined in {@code application.yml}.
- *
- * <p>
- * This configuration is only activated if DL4J is present on the classpath.
- *
- * <p>
- * Users can override the default model by defining their own
- * {@link MultiLayerNetwork} bean in their application context.
- */
 public class Dl4jAutoConfiguration {
 
     /**
