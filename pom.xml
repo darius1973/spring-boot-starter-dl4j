@@ -33,7 +33,7 @@
             <scope>import</scope>
           </dependency>
 
-          <!-- 🌐 REST support -->
+          <!-- REST support -->
             <dependency>
               <groupId>org.deeplearning4j</groupId>
               <artifactId>deeplearning4j-core</artifactId>

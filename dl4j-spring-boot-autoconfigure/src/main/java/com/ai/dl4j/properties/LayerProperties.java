@@ -5,11 +5,25 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+/**
+ * Configuration for a single neural network layer.
+ *
+ * <p>
+ * Each layer defines its type, size, activation function,
+ * and optionally a loss function (for output layers).
+ */
 @Data
 public class LayerProperties {
 
     /**
-     * Type of the layer (dense, output).
+     * Type of the layer.
+     *
+     * <p>
+     * Supported values:
+     * <ul>
+     *     <li>DENSE - fully connected layer</li>
+     *     <li>OUTPUT - output layer (must be last)</li>
+     * </ul>
      */
     @NotNull
     private LayerType type;
