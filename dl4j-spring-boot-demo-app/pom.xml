@@ -4,12 +4,14 @@
     <parent>
         <groupId>io.github.darius1973</groupId>
         <artifactId>spring-boot-starter-dl4j</artifactId>
-        <version>0.1.0-BETA</version>
+        <version>0.1.1-BETA</version>
     </parent>
 
     <artifactId>dl4j-demo-app</artifactId>
     <packaging>jar</packaging>
-
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
     <dependencies>
 
         <!-- starter -->

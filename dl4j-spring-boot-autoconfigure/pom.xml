@@ -4,11 +4,13 @@
     <parent>
         <groupId>io.github.darius1973</groupId>
         <artifactId>spring-boot-starter-dl4j</artifactId>
-        <version>0.1.0-BETA</version>
+        <version>0.1.1-BETA</version>
     </parent>
 
     <artifactId>dl4j-spring-boot-autoconfigure</artifactId>
     <name>DL4J Spring Boot Autoconfigure</name>
+    <description>Spring Boot autoconfig for Deeplearning4j</description>
+    <url>https://github.com/darius1973/spring-boot-starter-dl4j</url>
 
     <dependencies>
 
@@ -46,12 +48,14 @@
         <dependency>
             <groupId>org.deeplearning4j</groupId>
             <artifactId>deeplearning4j-core</artifactId>
+            <version>${dl4j.version}</version>
             <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.nd4j</groupId>
             <artifactId>nd4j-native-platform</artifactId>
+            <version>${nd4j.version}</version>
             <optional>true</optional>
         </dependency>
 

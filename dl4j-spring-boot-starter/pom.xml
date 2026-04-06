@@ -5,13 +5,14 @@
     <parent>
         <groupId>io.github.darius1973</groupId>
         <artifactId>spring-boot-starter-dl4j</artifactId>
-        <version>0.1.0-BETA</version>
+        <version>0.1.1-BETA</version>
     </parent>
 
     <!-- Artifact -->
     <artifactId>dl4j-spring-boot-starter</artifactId>
     <name>DL4J Spring Boot Starter</name>
     <description>Spring Boot starter for Deeplearning4j</description>
+    <url>https://github.com/darius1973/spring-boot-starter-dl4j</url>
 
     <!-- Dependencies -->
     <dependencies>
@@ -27,12 +28,14 @@
         <dependency>
             <groupId>org.deeplearning4j</groupId>
             <artifactId>deeplearning4j-core</artifactId>
+            <version>${dl4j.version}</version>
         </dependency>
 
         <!-- ND4J backend (CPU) -->
         <dependency>
             <groupId>org.nd4j</groupId>
             <artifactId>nd4j-native-platform</artifactId>
+            <version>${nd4j.version}</version>
         </dependency>
 
         <!-- Spring Boot Web (for REST inference endpoint) -->
@@ -46,7 +49,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
     </dependencies>
-
 </project>
