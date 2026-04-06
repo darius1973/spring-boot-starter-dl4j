@@ -1,19 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- ✅ Parent -->
+    <!-- Parent -->
     <parent>
         <groupId>io.github.darius1973</groupId>
         <artifactId>spring-boot-starter-dl4j</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1.0-BETA</version>
     </parent>
 
-    <!-- ✅ Artifact -->
+    <!-- Artifact -->
     <artifactId>dl4j-spring-boot-starter</artifactId>
     <name>DL4J Spring Boot Starter</name>
     <description>Spring Boot starter for Deeplearning4j</description>
 
-    <!-- ✅ Dependencies -->
+    <!-- Dependencies -->
     <dependencies>
 
         <!-- Autoconfigure module -->
