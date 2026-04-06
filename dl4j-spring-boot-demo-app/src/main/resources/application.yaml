@@ -1,0 +1,25 @@
+server:
+  port: 8080  # Port where the Spring Boot application will run
+
+dl4j:
+  input-size: 3  # Number of input features (size of input vector expected by the model)
+
+  seed: 123  # Random seed for reproducibility (same model initialization every run)
+
+  model:
+    layers:
+      # --- Hidden Layer 1 ---
+      - type: dense        # Fully connected (feedforward) layer
+        size: 16           # Number of neurons in this layer
+        activation: relu   # Activation function (introduces non-linearity)
+
+      # --- Hidden Layer 2 ---
+      - type: dense
+        size: 8
+        activation: relu
+
+      # --- Output Layer (MANDATORY, must be last) ---
+      - type: output       # Final layer producing predictions
+        size: 1            # Output dimension (e.g. 1 for regression or binary classification)
+        activation: sigmoid  # Activation for output (sigmoid = probability between 0 and 1)
+        loss: mse          # Loss function used during training
