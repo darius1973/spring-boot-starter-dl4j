@@ -32,7 +32,7 @@
     <url>https://github.com/darius1973/spring-boot-starter-dl4j</url>
   </scm>
 
-  <version>0.1.1-BETA</version>
+  <version>0.1.4-BETA</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -77,15 +77,6 @@
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>3.1.2</version>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0</version>
       </plugin>
@@ -109,8 +100,6 @@
         <artifactId>central-publishing-maven-plugin</artifactId>
         <version>0.9.0</version>
         <!--<extensions>true</extensions>-->
-        <inherited>false</inherited>
-
         <executions>
           <execution>
             <id>publish</id>
@@ -154,6 +143,15 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
       </plugin>
 
     </plugins>
