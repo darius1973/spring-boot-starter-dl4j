@@ -19,9 +19,9 @@ A Spring Boot starter that allows you to define and run neural networks using **
 
 ```xml
 <dependency>
-    <groupId>io.github.yourusername</groupId>
-    <artifactId>dl4j-spring-boot-starter</artifactId>
-    <version>0.1.0</version>
+    <groupId>io.github.darius1973</groupId>
+    <artifactId>spring-boot-starter-dl4j</artifactId>
+    <version>0.1.4-BETA</version>
 </dependency>
 ```
 
