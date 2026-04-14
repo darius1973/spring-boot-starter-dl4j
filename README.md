@@ -13,6 +13,7 @@ A Spring Boot starter that allows you to define and run neural networks using **
 * Optional REST API
 * Spring Boot auto-configuration
 
+## 📘 Full API Documentation: https://darius1973.github.io/spring-boot-starter-dl4j
 ---
 
 ## 📦 Installation
